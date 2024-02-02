@@ -1,10 +1,10 @@
-import { join } from 'path';
 import { Module } from '@nestjs/common';
 import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { RestaurantsModule } from './restaurants/restaurants.module';
+import { Restaurant } from './restaurants/entities/restaurant.entity';
 
 @Module({
   imports: [
@@ -19,8 +19,9 @@ import { RestaurantsModule } from './restaurants/restaurants.module';
         username: configService.get('DB_USERNAME'),
         password: configService.get('DB_PASSWORD'),
         database: configService.get('DB_NAME'),
-        // entities: [Restuarant]
-        entities: [join(process.cwd(), 'dist/**/*.entity.js')]
+        // entities: ['dist/**/*.entity.js'],
+        entities: [Restaurant],
+        // synchronize: true
       })
     }),
     RestaurantsModule
