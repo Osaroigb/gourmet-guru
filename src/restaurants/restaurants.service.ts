@@ -66,26 +66,24 @@ export class RestaurantsService {
       select: ['name', 'address', 'latitude', 'longitude', 'cuisine', 'rating']
     });
 
-    if (!restaurant) {
-      throw new NotFoundException(`Restaurant with ID ${id} not found`);
-    }
-
+    if (!restaurant) throw new NotFoundException(`Restaurant with ID ${id} not found`);
     return restaurant;
   }
 
   async update(id: number, updateRestaurantDto: UpdateRestaurantDto) : Promise<Restaurant> {
     const restaurant = await this.findOne(id);
+    if (!restaurant) throw new NotFoundException(`Restaurant with ID ${id} not found`);
     
-    Object.assign(restaurant, updateRestaurantDto);
-    return await this.restaurantsRepository.save(restaurant);
+    await this.restaurantsRepository.update(id, updateRestaurantDto);
+    
+    // Fetch the updated restaurant after the update operation
+    const updatedRestaurant = await this.findOne(id);
+    return updatedRestaurant;
   }
 
   async remove(id: number) : Promise<Restaurant | null> {
     const restaurant = await this.findOne(id);
-
-    if (!restaurant) {
-      return null;
-    }
+    if (!restaurant) return null;
 
     await this.restaurantsRepository.remove(restaurant);
     return restaurant;

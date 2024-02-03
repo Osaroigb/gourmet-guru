@@ -1,7 +1,19 @@
 import { RestaurantsService } from './restaurants.service';
 import { CreateRestaurantDto } from './dto/create-restaurant.dto';
 import { UpdateRestaurantDto } from './dto/update-restaurant.dto';
-import { Controller, Get, Post, Body, Patch, Param, Delete, Query, BadRequestException, NotFoundException } from '@nestjs/common';
+
+import { 
+  Controller,
+  Get, 
+  Post, 
+  Body, 
+  Patch, 
+  Param, 
+  Query, 
+  Delete, 
+  NotFoundException,
+  BadRequestException 
+} from '@nestjs/common';
 
 @Controller('v1/restaurants')
 export class RestaurantsController {
