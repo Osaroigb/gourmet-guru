@@ -25,9 +25,8 @@ import { Restaurant } from './restaurants/entities/restaurant.entity';
         username: configService.get('DB_USERNAME'),
         password: configService.get('DB_PASSWORD'),
         database: configService.get('DB_NAME'),
-        entities: [Restaurant]
-        // entities: ['dist/**/*.entity.js'],
-        // synchronize: true
+        entities: [Restaurant],
+        synchronize: true
       })
     }),
     RestaurantsModule
