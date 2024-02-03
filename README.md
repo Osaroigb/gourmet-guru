@@ -32,6 +32,7 @@ GourmetGuru is an API that allows users to find restaurants within a city based 
 This section will guide you through the setup process required to get up and running with the application.
 
 
+
 ### Requirements
 
 -   Node (Version >= 18.17.1)
@@ -45,6 +46,7 @@ This section will guide you through the setup process required to get up and run
 -   TypeScript (`npm install -g typescript`)
 
 
+
 ### Get Started
 
 1. Clone the project repository with `git clone https://github.com/Osaroigb/gourmet-guru.git` or GitHub Desktop
@@ -56,6 +58,7 @@ This section will guide you through the setup process required to get up and run
 4. Customize your app port number by filling the `APP_PORT` env
 
 
+
 ### Database Setup
 
 1. Create a new database in postgresql
@@ -63,6 +66,7 @@ This section will guide you through the setup process required to get up and run
 2. Fill the `.env` file you created with the database credentials
 
 3. Run `npm run start:dev` in the terminal to start the server and create the tables in the database
+
 
 
 ### Development
@@ -73,7 +77,8 @@ It is important to set up environment variables for the system to function prope
 
 **NOTE**: The solution to the `Question 1 - Algorithm` is found in the `Question1-Algorithm.js` file in the `src` directory. To run it, `cd src` then `node Question1-Algorithm.js` in the terminal.
 
-s
+
+
 ### API Documentation
 
 Explore the API endpoints and learn how to use them by referring to the [Postman Documentation](https://documenter.getpostman.com/view/23691550/2s9YyvBzxY) 
@@ -83,9 +88,11 @@ This documentation provides a detailed guide on interacting with the service, in
 Feel free to use the Postman documentation as a reference to understand the available endpoints and make requests to the service.
 
 
+
 ### Code Standard and Resources
 
 - [Node.js best practices](https://github.com/goldbergyoni/nodebestpractices)
+
 
 
 ### License
